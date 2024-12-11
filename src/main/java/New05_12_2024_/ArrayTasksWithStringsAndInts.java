@@ -1,4 +1,4 @@
-package New0512;
+package New05_12_2024_;
 
 public class ArrayTasksWithStringsAndInts {
 

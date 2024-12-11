@@ -1,6 +1,4 @@
-package telran;
-
-import java.util.Arrays;
+package New03_12_2024_;
 
 public class task {
     public static void main(String[] args) {

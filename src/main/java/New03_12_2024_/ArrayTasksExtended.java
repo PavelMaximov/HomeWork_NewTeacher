@@ -1,4 +1,4 @@
-package telran;
+package New03_12_2024_;
 
 import java.util.Arrays;
 
@@ -170,18 +170,22 @@ public class ArrayTasksExtended {
     // 28. Найти длину самой длинной последовательности одинаковых элементов.
     public static void task28() {
         int[] array = {1, 1, 2, 2, 2, 3, 3};
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]){
-                    count++;
+        int maxLength = 1;
+        int currentLength = 1;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] == array[i + 1]) {
+                currentLength++;
+            } else {
+                if (currentLength > maxLength) {
+                    maxLength = currentLength;
                 }
-                else{
-                    break;
-                }
+                currentLength = 1;
             }
         }
-        System.out.println(count);
+        if (currentLength > maxLength) {
+            maxLength = currentLength;
+        }
+        System.out.println(maxLength);
     }
 
     // 29. Найти сумму положительных элементов, расположенных после первого отрицательного.
@@ -192,7 +196,24 @@ public class ArrayTasksExtended {
     // 30. Удалить все дубликаты из массива.
     public static void task30() {
         int[] array = {1, 2, 2, 3, 4, 4, 5};
-
+        int[] ar2 = new int[array.length];
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            boolean dubl = false;
+            for (int j = 0; j < count; j++) {
+                if (array[i] == ar2[j]) {
+                    dubl = true;
+                    break;
+                }
+            }
+            if (!dubl) {
+                ar2[count++] = array[i];
+            }
+        }
+        int[] ar3 = Arrays.copyOf(ar2, count);
+        System.out.println(Arrays.toString(ar3));
     }
 
 }
+
+

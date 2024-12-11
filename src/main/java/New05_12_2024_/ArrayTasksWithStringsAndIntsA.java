@@ -1,4 +1,6 @@
-package New0512;
+package New05_12_2024_;
+
+import java.util.Arrays;
 
 public class ArrayTasksWithStringsAndIntsA {
 
@@ -76,24 +78,65 @@ public class ArrayTasksWithStringsAndIntsA {
     public static void task6() {
         String[] array = {"apple pie", "banana bread", "cherry tart"};
         String target = "bread";
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].contains(target)) {
+                count++;
+            }
+        }
+
+        String[] newArray = new String[array.length - count];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (!array[i].contains(target)) {
+                newArray[index] = array[i];
+                index++;
+            }
+        }
+        System.out.println(Arrays.toString(newArray));
     }
+
 
     // 7. Найти минимальный элемент массива целых чисел.
     public static void task7() {
         int[] array = {3, 1, 4, 1, 5};
+        int min = array[0];
 
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        System.out.println(min);
     }
 
     // 8. Найти строку с минимальной длиной.
     public static void task8() {
         String[] array = {"cat", "elephant", "dog"};
+        String shortest = array[0];
 
+        for (int i = 1; i < array.length; i++) {
+            if (array[i].length() < shortest.length()) {
+                shortest = array[i];
+            }
+        }
+
+        System.out.println(shortest);
     }
+
+
 
     // 9. Подсчитать количество четных чисел в массиве.
     public static void task9() {
         int[] array = {1, 2, 3, 4, 5};
-
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 
     // 10. Найти строку, которая встречается чаще всего.
