@@ -5,11 +5,47 @@ public class ArrayTasksWithStringsAndInts {
     // 21. Генерация нового массива из четных чисел.
     public static void task21() {
         int[] array = {1, 2, 3, 4, 5, 6};
+        int evenCount = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                evenCount++;
+            }
+        }
+        int[] evenArray = new int[evenCount];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                evenArray[index] = array[i];
+                index++;
+            }
+        }
+        for (int i = 0; i < evenArray.length; i++) {
+            System.out.print(evenArray[i]);
+        }
+        System.out.println();
     }
 
     // 22. Генерация нового массива из нечетных чисел.
     public static void task22() {
         int[] array = {1, 2, 3, 4, 5, 6};
+        int oddCount = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                oddCount++;
+            }
+        }
+        int[] oddArray = new int[oddCount];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 != 0) {
+                oddArray[index] = array[i];
+                index++;
+            }
+        }
+        for (int i = 0; i < oddArray.length; i++) {
+            System.out.print(oddArray[i] + " ");
+        }
+        System.out.println();
     }
 
     // 23. Проверка на палиндром в массиве строк.

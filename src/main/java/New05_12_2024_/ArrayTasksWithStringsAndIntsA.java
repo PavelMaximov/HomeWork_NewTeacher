@@ -144,5 +144,19 @@ public class ArrayTasksWithStringsAndIntsA {
         String[] array = {"apple", "banana", "apple", "cherry", "banana", "banana"};
         String mostFrequent = "";
         int maxCount = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            int count = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mostFrequent = array[i];
+            }
+        }
+        System.out.println(mostFrequent);
     }
 }

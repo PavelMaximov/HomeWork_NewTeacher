@@ -37,14 +37,14 @@ public class ArrayTasksExtended {
         int[] array = {0, 1, 0, 3, 0};
         int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == 0){
+            if (array[i] == 0) {
                 count++;
             }
         }
         int[] newArray = new int[array.length - count];
         int a = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] != 0){
+            if (array[i] != 0) {
                 newArray[a++] = array[i];
             }
         }
@@ -58,7 +58,7 @@ public class ArrayTasksExtended {
         int divisor = 5;
         int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 5 == 0){
+            if (array[i] % 5 == 0) {
                 count++;
             }
         }
@@ -86,7 +86,7 @@ public class ArrayTasksExtended {
         int[] array = {1, 2, -3, 4, -5};
         int index = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0){
+            if (array[i] < 0) {
                 index = i;
                 break;
             }
@@ -99,7 +99,7 @@ public class ArrayTasksExtended {
         int[] array = {1, 2, 3, 4, 5};
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
-                sum = sum + array[i];
+            sum = sum + array[i];
         }
         System.out.println(sum);
     }
@@ -121,7 +121,7 @@ public class ArrayTasksExtended {
         int temp = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
-                if (array[j] < 0 && array[j + 1] > 0){
+                if (array[j] < 0 && array[j + 1] > 0) {
                     temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
@@ -138,10 +138,10 @@ public class ArrayTasksExtended {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
-                if(array[i] == array[j] && (i != j)){
+                if (array[i] == array[j] && (i != j)) {
                     break;
                 }
-                if (j == array.length -1){
+                if (j == array.length - 1) {
                     count++;
 
                 }
@@ -191,6 +191,18 @@ public class ArrayTasksExtended {
     // 29. Найти сумму положительных элементов, расположенных после первого отрицательного.
     public static void task29() {
         int[] array = {1, -2, 3, 4, -5};
+        int sum = 0;
+        boolean foundNegative = false;
+
+        for (int i = 0; i < array.length; i++) {
+            if (foundNegative && array[i] > 0) {
+                sum += array[i];
+            }
+            if (array[i] < 0 && !foundNegative) {
+                foundNegative = true;
+            }
+        }
+        System.out.println("Сумма положительных элементов после первого отрицательного: " + sum);
     }
 
     // 30. Удалить все дубликаты из массива.
