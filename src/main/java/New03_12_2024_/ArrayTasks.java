@@ -47,7 +47,7 @@ public class ArrayTasks {
             if (array[i] < min) {
                 min = array[i];
             }
-        }
+        }System.out.println(min);
     }
 
     // 5. Найти индекс максимального элемента массива.
@@ -58,7 +58,7 @@ public class ArrayTasks {
             if (array[i] > max) {
                 max = array[i];
             }
-        }
+        }System.out.println(max);
     }
 
     // 6. Посчитать количество положительных элементов.
@@ -88,13 +88,24 @@ public class ArrayTasks {
     // 8. Посчитать количество четных элементов.
     public static void task8() {
         int[] array = {4, -2, 0, 7};
-
+        int count = 0;
+        for (int num : array) {
+            if (num % 2 == 0) {
+                count++;
+            }
+        }System.out.println(count);
     }
+
 
     // 9. Посчитать количество нечетных элементов.
     public static void task9() {
         int[] array = {4, -2, 0, 7};
-
+        int count = 0;
+        for (int num : array) {
+            if (num % 2 != 0) {
+                count++;
+            }
+        }System.out.println(count);
     }
 
     // 10. Проверить, есть ли в массиве заданное число.

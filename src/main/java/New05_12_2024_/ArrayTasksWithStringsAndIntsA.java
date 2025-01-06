@@ -7,15 +7,20 @@ public class ArrayTasksWithStringsAndIntsA {
     // 1. Найти сумму элементов массива целых чисел.
     public static void task1() {
         int[] array = {1, 2, 3, 4};
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        System.out.println(sum);
     }
+
 
     // 2. Найти длину самой длинной строки в массиве строк.
     public static void task2() {
         String[] array = {"cat", "elephant", "dog"};
-
         int maxLength = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i].length() > maxLength){
+            if (array[i].length() > maxLength) {
                 maxLength = array[i].length();
             }
         }
@@ -27,8 +32,7 @@ public class ArrayTasksWithStringsAndIntsA {
         String[] array = {"apple", "banana", "cherry"};
         String target = "banana";
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == target){
-
+            if (array[i] == target) {
             }
         }
         System.out.println("true");
@@ -51,7 +55,7 @@ public class ArrayTasksWithStringsAndIntsA {
     }
 
 
-// 5. Найти строку с максимальным количеством символов 'e'.
+    // 5. Найти строку с максимальным количеством символов 'e'.
     public static void task5() {
         String[] array = {"elephant", "eagle", "dog"};
         String maxString = "";
@@ -60,11 +64,11 @@ public class ArrayTasksWithStringsAndIntsA {
         for (int i = 0; i < array.length; i++) {
             int count = 0;
             for (int j = 0; j < array[i].length(); j++) {
-                if (array[i].charAt(j) == target){
+                if (array[i].charAt(j) == target) {
                     count++;
                 }
             }
-            if (count > maxCount){
+            if (count > maxCount) {
                 maxCount = count;
                 maxString = array[i];
             }
@@ -124,7 +128,6 @@ public class ArrayTasksWithStringsAndIntsA {
 
         System.out.println(shortest);
     }
-
 
 
     // 9. Подсчитать количество четных чисел в массиве.
